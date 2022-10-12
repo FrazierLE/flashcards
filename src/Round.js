@@ -30,13 +30,5 @@ class Round {
     }
 }   
 
-
-
 module.exports = Round;
-//pseudocode: properties
-//pseudocode: methods
-    //returnCurrentCard method - return this.currentCard
-    //takeTurn method -
-        //need to update currentCard property to the next card
-    //calculatePercentCorrect - need to return total number of guesses/divided by correct # of guesses
-    //endRound - prints round over and what percent they answered correctly - interpolation
+
