@@ -43,7 +43,6 @@ describe('Round', function() {
     it('should update current card', function() {
         round.returnCurrentCard()
         expect(round.currentCard).to.deep.equal({id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'})
-        // expect(round.currentCard).to.equal({id: 2, question: 'What is a comma-separated list of related values?', answers: ['array', 'object', 'function'], correctAnswer: 'array'})
     }); 
 
     it('should update turns counter, evaluate guess, and give feedback if correct', function() {
@@ -66,7 +65,6 @@ describe('Round', function() {
         expect(turn2.giveFeedback()).to.equal('Incorrect!');
         expect(round.incorrectGuesses).to.deep.equal([1])
     });
-
 
     it('should calculate percent of correct guesses', function() {
         round.takeTurn('object');
