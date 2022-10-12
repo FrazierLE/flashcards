@@ -109,6 +109,19 @@ describe('Round', function() {
 
         round.takeTurn('object');
         round.takeTurn('function');
-        expect(round.calculatePercentCorrect()).to.equal('50%');
+        round.calculatePercentCorrect()
+        expect(round.percentOfCorrectGuesses).to.equal(50);
     });
+    it('should print message with percentage score', function() {
+        const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+        const card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+        const card3 = new Card(3, 'What type of prototype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'accessor method');
+        const deck = new Deck([card1, card2, card3]);
+        const round = new Round(deck);
+
+        round.takeTurn('object');
+        round.takeTurn('function');
+        round.calculatePercentCorrect()
+        expect(round.endRound()).to.equal('**Round over!**You answered 50% of the questions correctly!')
+    })
 });

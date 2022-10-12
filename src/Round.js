@@ -22,8 +22,10 @@ class Round {
        return this.currentCard.id+=1
     }
     calculatePercentCorrect() {
-        var percentage = (this.incorrectGuesses.length)/(this.turnsCounter) * 100;
-        return `${percentage}%`;
+        this.percentOfCorrectGuesses = (this.incorrectGuesses.length)/(this.turnsCounter) * 100;
+    }
+    endRound() {
+        return `**Round over!**You answered ${this.percentOfCorrectGuesses}% of the questions correctly!`
     }
 }   
 
