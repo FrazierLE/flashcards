@@ -8,18 +8,19 @@ class Round {
         this.currentCard = deck.cards[0];
         this.percentOfCorrectGuesses = 0;
     }
+    returnCurrentCard() {
+        return this.currentCard;
+    }
     takeTurn(guess) {
-        this.turnsCounter++
         const turn = new Turns(guess, this.currentCard);
         turn.evaluateGuess();
-        if (turn.giveFeedback() === 'Incorrect!'){
-            return this.incorrectGuesses.push(this.currentCard.id)
+        if (turn.evaluateGuess() === false) {
+            this.incorrectGuesses.push(this.currentCard.id)
         }; 
-        return 
-    }
-    returnCurrentCard() {
-        //COME BACK TO THIS.
-       return this.currentCard.id+=1
+        this.turnsCounter++
+        this.currentCard = this.deck.cards[this.turnsCounter];
+        turn.giveFeedback();
+        return
     }
     calculatePercentCorrect() {
         this.percentOfCorrectGuesses = (this.incorrectGuesses.length)/(this.turnsCounter) * 100;

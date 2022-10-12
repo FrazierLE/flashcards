@@ -40,6 +40,12 @@ describe('Round', function() {
         expect(round.percentOfCorrectGuesses).to.equal(0);
     });
 
+    it('should update current card', function() {
+        round.returnCurrentCard()
+        expect(round.currentCard).to.deep.equal({id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'})
+        // expect(round.currentCard).to.equal({id: 2, question: 'What is a comma-separated list of related values?', answers: ['array', 'object', 'function'], correctAnswer: 'array'})
+    }); 
+
     it('should update turns counter, evaluate guess, and give feedback if correct', function() {
         const turn1 = new Turns('object', {id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'})
         
@@ -61,9 +67,6 @@ describe('Round', function() {
         expect(round.incorrectGuesses).to.deep.equal([1])
     });
 
-    it('should update current card', function() {
-        expect(round.returnCurrentCard()).to.equal(2)
-    });
 
     it('should calculate percent of correct guesses', function() {
         round.takeTurn('object');
@@ -71,7 +74,7 @@ describe('Round', function() {
         round.calculatePercentCorrect()
         expect(round.percentOfCorrectGuesses).to.equal(50);
     });
-    
+
     it('should print message with percentage score', function() {
         round.takeTurn('object');
         round.takeTurn('function');
