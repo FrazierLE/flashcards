@@ -16,9 +16,7 @@ class Game {
       return this.card = new Card(element.id, element.question, element.answers, element.correctAnswer)
     });
     this.deck = new Deck(allTheCards)
-    console.log('deck', this.deck)
     this.currentRound = new Round(this.deck);
-    console.log('round', this.currentRound)
     this.printMessage(this.deck, this.currentRound);
     this.printQuestion(this.currentRound);
   }
