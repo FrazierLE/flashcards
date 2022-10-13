@@ -36,10 +36,6 @@ describe('Round', function() {
         expect(round.currentCard).to.deep.equal({id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'})
     });
 
-    it('should default to percent of correct guesses to 0', function() {
-        expect(round.percentOfCorrectGuesses).to.equal(0);
-    });
-
     it('should update current card', function() {
         round.returnCurrentCard()
         expect(round.currentCard).to.deep.equal({id: 1, question: 'What allows you to define a set of related information using key-value pairs?', answers: ['object', 'array', 'function'], correctAnswer: 'object'})
@@ -70,7 +66,7 @@ describe('Round', function() {
         round.takeTurn('object');
         round.takeTurn('function');
         round.calculatePercentCorrect()
-        expect(round.percentOfCorrectGuesses).to.equal(50);
+        expect(round.calculatePercentCorrect()).to.equal(50);
     });
 
     it('should print message with percentage score', function() {
