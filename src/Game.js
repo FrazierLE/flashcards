@@ -15,16 +15,17 @@ class Game {
     const allTheCards = prototypeQuestions.map(element => {
       return this.card = new Card(element.id, element.question, element.answers, element.correctAnswer)
     });
-    this.deck = new Deck(allTheCards);
+    this.deck = new Deck(allTheCards)
+    console.log('deck', this.deck)
     this.currentRound = new Round(this.deck);
-    this.printMessage(this.currentRound.deck, this.currentRound);
+    console.log('round', this.currentRound)
+    this.printMessage(this.deck, this.currentRound);
     this.printQuestion(this.currentRound);
   }
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
-
   printQuestion(round) {
       util.main(round);
   }
@@ -32,13 +33,3 @@ class Game {
 
 
 module.exports = Game;
-
-
-//pseudocode: properties
-  //currentRound property
-//pseudocode: methods
-  //create cards - .map() XX
-  //push cards into deck - .push() XX
-  //create new round using the deck
-  //print message XX
-  //print question

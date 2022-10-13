@@ -9,7 +9,7 @@ const expect = chai.expect;
 
 
 describe('Game', function(){
-    let cards, deck, round, game;
+    let card, deck, round, game;
 
     beforeEach(function() {
         deck = new Deck([])
@@ -23,14 +23,16 @@ describe('Game', function(){
 
     it('should keep track of round', function() {
         expect(game.currentRound).to.deep.equal(null)
+        expect(game.deck).to.deep.equal(null)
     });
 
-    it('should have a property of card and deck', function() {
-        expect(game.card).to.equal();
-        expect(game.deck).to.equal(null)
-    })
+    // it('should have a property of card and deck', function() {
+    //     expect(game.card).to.equal(card);
+    // })
 
-    it('should have a method to start game', function() {
-        game.start()
+    it('should create a new deck, round, and card', function() {
+        // expect(card).to.be.a.instanceOf(Card)
+        expect(deck).to.be.a.instanceOf(Deck)
+        expect(round).to.be.a.instanceOf(Round)
     })
 })
