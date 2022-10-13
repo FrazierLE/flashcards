@@ -14,17 +14,15 @@ class Turns {
     evaluateGuess() {
         if(this.userGuess === this.card['correctAnswer']) {
             return true;
-        } else {return false}
+        } else {return false};
     }
     giveFeedback() {
-        if(this.userGuess === this.card['correctAnswer']) {
+        if(this.evaluateGuess()) {
             return 'Correct!';
-        } else {return 'Incorrect!'}
+        } else {return 'Incorrect!'};
     }
 }
 
 
 
-module.exports = 
-Turns, 
-Card;
+module.exports = Turns;
