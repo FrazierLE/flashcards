@@ -11,9 +11,11 @@ class Game {
   start() {
     const allTheCards = prototypeQuestions.map(element => {
       this.card = new Card(element.id, element.question, element.answers, element.correctAnswer)
+      this.currentRound.deck.cards.push(this.card);
       return
     });
-    this.currentRound.deck.cards.push(allTheCards)
+    this.printMessage(this.currentRound.deck, this.currentRound)
+    // this.printQuestion(this.currentRound)
   }
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
@@ -25,9 +27,15 @@ class Game {
   }
 }
 
+
 module.exports = Game;
 
 
 //pseudocode: properties
   //currentRound property
 //pseudocode: methods
+  //create cards - .map() XX
+  //push cards into deck - .push() XX
+  //create new round using the deck
+  //print message XX
+  //print question
