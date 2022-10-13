@@ -7,9 +7,9 @@ const Deck = require('./Deck');
 
 class Game {
   constructor() {
-    this.currentRound = null;
+    this.currentRound;
     this.card;
-    this.deck = null;
+    this.deck;
   }
   start() {
     const allTheCards = prototypeQuestions.map(element => {
