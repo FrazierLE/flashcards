@@ -22,11 +22,12 @@ describe('Game', function(){
     });
 
     it('should keep track of round', function() {
-        expect(game.currentRound).to.deep.equal(round)
+        expect(game.currentRound).to.deep.equal(null)
     });
 
-    it('should have a property of card', function() {
+    it('should have a property of card and deck', function() {
         expect(game.card).to.equal();
+        expect(game.deck).to.equal(null)
     })
 
     it('should have a method to start game', function() {
