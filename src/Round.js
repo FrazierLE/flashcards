@@ -14,17 +14,18 @@ class Round {
     takeTurn(guess) {
         const turn = new Turns(guess, this.currentCard);
         if (turn.evaluateGuess() === false) {
-            this.incorrectGuesses.push(this.currentCard.id)
+           this.incorrectGuesses.push(this.currentCard.id)
         }; 
         this.turnsCounter++
         this.currentCard = this.deck.cards[this.turnsCounter];
         return turn.giveFeedback();
     }
     calculatePercentCorrect() {
-       return this.percentOfCorrectGuesses = (this.incorrectGuesses.length)/(this.turnsCounter) * 100;
+       return this.percentOfCorrectGuesses = ((this.turnsCounter-this.incorrectGuesses.length))/(this.turnsCounter) * 100;
     }
     endRound() {
-        console.log(`**Round over!**You answered ${this.percentOfCorrectGuesses}% of the questions correctly!`)
+        console.log(`**Round over!**You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+        return
     }
 }   
 
