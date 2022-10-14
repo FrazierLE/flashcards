@@ -9,6 +9,8 @@ This application is multiple choice game with a learning objective that can be p
 1. run node index.js
 1. Play the game! 
 
+#### Deployed Link:  https://frazierle.github.io/flashcards/
+
 
 #### Preview Game:
 ![Screen Shot 2022-10-13 at 4 29 40 PM](https://user-images.githubusercontent.com/108101979/195722506-49506ebb-5c67-416d-bfcb-46b285145d40.png)
