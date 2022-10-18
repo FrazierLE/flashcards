@@ -5,8 +5,10 @@ This application is multiple choice game with a learning objective that can be p
 
 #### Installation Instructions:
 1. open your terminal
-1. type git clone git@github.com:FrazierLE/flashcards.git
-1. run node index.js
+1. Clone the repo to your local machine using git clone
+1. `cd` into it
+1. Run `npm install`
+1. Run `node index.js` to start the game
 1. Play the game! 
 
 #### Deployed Link:  https://frazierle.github.io/flashcards/
@@ -20,6 +22,8 @@ This application is multiple choice game with a learning objective that can be p
 
 
 #### Contributors: Github: FrazieLE
+
+#### Technologies Used: HTML, CSS, Javascript, Mocha, and Chai
 
 
 #### Learning Goals:
